@@ -8,12 +8,16 @@ from hashtables import (HashTable,
 
 def get_indices_of_item_weights(weights, length, limit):
     ht = HashTable(16)
+    tuple_list = []
+    for i in range(length):
+        ht.hash_table_insert(ht, weights[i], i)
+    for i in weights:
+        compliment = ht.hash_table_retrieve(ht, limit-i)
 
-    """
-    YOUR CODE HERE
-    """
-
-    return None
+    if len(tuple_list) > 0:
+        return tuple_list
+    else:
+        return None
 
 
 def print_answer(answer):

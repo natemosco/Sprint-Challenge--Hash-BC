@@ -27,7 +27,7 @@ def proof_of_work(last_proof):
 
     proof = 0
     while not valid_proof(last_proof, proof):
-        proof = random()
+        proof -= 1
 
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
